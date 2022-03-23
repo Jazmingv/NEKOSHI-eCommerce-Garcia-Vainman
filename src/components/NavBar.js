@@ -1,4 +1,5 @@
 import "../App.css";
+import CartWidget from "./CartWidget";
 //import {}
 
 function NavBar() {
@@ -19,6 +20,9 @@ function NavBar() {
           </li>
           <li>
             <button className="navbar-btn">Contacto</button>
+          </li>
+          <li>
+            <CartWidget />
           </li>
         </ul>
       </header>
