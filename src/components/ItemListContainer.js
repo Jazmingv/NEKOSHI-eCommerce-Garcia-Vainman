@@ -1,7 +1,7 @@
 function ItemListContainer({children}) {
     return (
       <>
-        {children}
+        <h1>Welcome!</h1>
       </>
     );
   }
