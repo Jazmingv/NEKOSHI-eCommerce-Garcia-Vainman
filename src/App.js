@@ -9,7 +9,6 @@ function App() {
       <NavBar />
       <div className="MainPage">
         <ItemListContainer />
-        <ItemCount currentStock={11} initialQuantity={1} />
       </div>
     </div>
   );

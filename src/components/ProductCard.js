@@ -1,3 +1,5 @@
+import ItemCount from './ItemCount';
+
 const ProductCard = (props) => {
   return (
     <div class="card">
@@ -6,6 +8,7 @@ const ProductCard = (props) => {
         <h3>{props.name}</h3>
         <p>{props.description}</p>
         <p><b>${props.price}</b></p>
+        <ItemCount initialQuantity={props.initialQuantity} currentStock={props.currentStock}/>
       </div>
     </div>
   );

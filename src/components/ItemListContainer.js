@@ -1,5 +1,4 @@
 import ListProducts from "./ListProducts";
-import ProductCard from "./ProductCard";
 
 function ItemListContainer({ children }) {
   return (
