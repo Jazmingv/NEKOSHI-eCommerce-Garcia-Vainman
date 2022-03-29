@@ -1,17 +1,20 @@
 import { useState } from "react";
 
-const ItemCount = () => {
-  const [quantity, setQuantity] = useState(0);
+const ItemCount = (props) => {
+  const [quantity, setQuantity] = useState(props.initialQuantity);
 
   const Increment = () => {
-    if (quantity >= 0 && quantity < 5) {
+    if (quantity >= props.initialQuantity && quantity < props.currentStock) {
       setQuantity(quantity + 1);
     }
   };
   const Decrement = () => {
-    if (quantity <= 5 && quantity > 0) {
+    if (quantity <= props.currentStock && quantity > props.initialQuantity) {
       setQuantity(quantity - 1);
     }
+  };
+  const onAdd = () => {
+    // console.log("onAdd");
   };
 
   return (
@@ -19,6 +22,8 @@ const ItemCount = () => {
       <button onClick={Decrement}>-</button>
       <p>{quantity}</p>
       <button onClick={Increment}>+</button>
+      <br />      
+      <button onClick={onAdd}>Agregar al carrito</button>
     </>
   );
 };
