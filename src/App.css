@@ -86,6 +86,64 @@ ul.navbar-links li button.navbar-btn:hover {
   padding: 2px 16px;
 }
 
+.card-image{
+  float: left;
+  height: 600px;
+  width: 400px;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.card-right{
+  float: right;
+  margin-top: 20px;
+  height: 600px;
+  width: 400px;
+  margin-right: 100px;
+}
+
+.card-image .card-right{
+  display: inline;
+}
+
+.item-title{
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.item-price{
+  font-size: small;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px solid #f3f3f3;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.item-desc{
+  color: #888888;
+}
+
+.btn-add{
+  background: white;
+  width: 150px;
+  height: 30px;
+  border: 1px solid #CCCCCC;
+  margin-top: 30px;
+}
+
+.btn-size:focus, .btn-add{
+  background: white;
+  border: 2px solid #222222;
+  outline: 0;
+}
+
+.btn-add:focus, .btn-add:hover{
+  background: black;
+  color: white;
+  outline: 0;
+}
+
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;
