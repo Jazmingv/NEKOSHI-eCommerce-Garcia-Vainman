@@ -29,15 +29,19 @@ ul.navbar-links li {
   font-weight: 400;
 }
 
-ul.navbar-links li button.navbar-btn {
+ul.navbar-links li button.navbar-btn,
+a {
+  color: #1e1f1c;
+  text-decoration: none;
   border-style: none;
   background: none;
-  font-family: 'cubano-sharp';
+  font-family: 'cubano-sharp', sans-serif;
   font-size: 25px;
   letter-spacing: 1px;
 }
 
-ul.navbar-links li button.navbar-btn:hover {
+ul.navbar-links li button.navbar-btn:hover,
+a:hover {
   background: linear-gradient(
     to bottom,
     transparent 50%,
@@ -71,6 +75,7 @@ ul.navbar-links li button.navbar-btn:hover {
   width: 300px;
   border-radius: 15px;
   padding: 15px;
+  margin: 10px;
 }
 
 .card img {
@@ -112,6 +117,12 @@ ul.navbar-links li button.navbar-btn:hover {
   text-align: left;
 }
 
+.item-count {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+
 .item-price{
   font-size: small;
   padding-top: 5px;
@@ -128,6 +139,7 @@ ul.navbar-links li button.navbar-btn:hover {
   background: white;
   width: 150px;
   height: 30px;
+  font-size: x-small;
   border: 1px solid #CCCCCC;
   margin-top: 30px;
 }

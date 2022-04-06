@@ -1,12 +1,14 @@
-import ItemCount from "./ItemCount";
+import ItemCount from "../ItemDetails/ItemCount";
+import Paper from "@mui/material/Paper";
 
 const ProductCard = (props) => {
   return (
     <>
-      <div class="card">
-        <img src="https://picsum.photos/250/250" alt="logo" />
+      <Paper elevation={3} className="card">
+        <img src={props.imageUrl} alt={props.title} />
         <div class="container">
-          <h3>{props.name}</h3>
+          <h3>{props.title}</h3>
+          <h5>{props.author}</h5>
           <p>{props.description}</p>
           <p>
             <b>${props.price}</b>
@@ -16,7 +18,7 @@ const ProductCard = (props) => {
             currentStock={props.currentStock}
           />
         </div>
-      </div>
+      </Paper>
     </>
   );
 };
