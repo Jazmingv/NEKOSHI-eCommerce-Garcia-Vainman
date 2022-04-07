@@ -4,22 +4,30 @@ import { useEffect, useState } from "react";
 import mockProducts from "../mockProducts";
 
 const ItemDetailContainer = () => {
+  const getBook = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(mockProducts);
+      }, 2000);
+    });
+  };
+
   const { id } = useParams();
   const [book, setBook] = useState({});
 
   useEffect(() => {
-    filterProductById(id);
+    getBook().then((book) => {
+      filterProductById(id);
+    });
   }, [id]);
 
   const filterProductById = (id) => {
     return mockProducts.map((product) => {
-      if (product.id == id) {
+      if (product.id === toString(id)) {
         return setBook(product);
       }
     });
   };
-
-  console.log(book);
 
   return (
     <div className="container">

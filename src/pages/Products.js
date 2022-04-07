@@ -6,7 +6,7 @@ import "../App.css"
 const Products = () => {
 
   const filterProductByCategory = (category) => {
-    return mockProducts.filter((product) => product.category == category);
+    return mockProducts.filter((product) => product.category === toString(category));
   };
   return (
     <div>

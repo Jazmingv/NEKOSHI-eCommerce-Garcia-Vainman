@@ -6,7 +6,7 @@ const ProductCard = (props) => {
     <>
       <Paper elevation={3} className="card">
         <img src={props.imageUrl} alt={props.title} />
-        <div class="container">
+        <div className="container">
           <h3>{props.title}</h3>
           <h5>{props.author}</h5>
           <p>{props.description}</p>
