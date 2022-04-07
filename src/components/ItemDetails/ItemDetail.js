@@ -1,7 +1,15 @@
 import "../../App.css";
 import ItemCount from "./ItemCount";
+import { useState, useEffect } from "react";
 
 const ItemDetail = (props) => {
+
+  const [counter, setCounter] = useState(0);
+
+  const onAdd = (e) => {
+    setCounter(counter + 1);
+  };
+
   return (
     <div className="container">
       <div className="card-image">
@@ -22,7 +30,9 @@ const ItemDetail = (props) => {
         <ItemCount
           initialQuantity={props.initialQuantity}
           currentStock={props.currentStock}
+          funct={onAdd()}
         />
+        <p>CANTIDAD A COMPRAR: {counter}</p>
       </div>
     </div>
   );
