@@ -1,7 +1,18 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+
 import ItemCount from "../ItemDetails/ItemCount";
+import CartContext from "../../contexts/CartContext";
 import Paper from "@mui/material/Paper";
 
 const ProductCard = (props) => {
+
+  const { cart, addToCart } = useContext(CartContext);
+
+  const handleAddToCart = (e) => {
+    addToCart(props.item);
+  };
+
   return (
     <>
       <Paper elevation={3} className="card">
@@ -13,10 +24,8 @@ const ProductCard = (props) => {
           <p>
             <b>${props.price}</b>
           </p>
-          <ItemCount
-            initialQuantity={props.initialQuantity}
-            currentStock={props.currentStock}
-          />
+          
+      <Link to={'/cart'}><button className="btn-add" onClick={handleAddToCart()}>ADD TO CART</button></Link>
         </div>
       </Paper>
     </>

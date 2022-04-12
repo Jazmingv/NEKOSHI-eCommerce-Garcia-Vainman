@@ -22,7 +22,6 @@ const ItemCount = (props, funct) => {
       <p style={{margin: '5px', marginTop: '35px'}}>{quantity}</p>
       <button className="btn-add" onClick={Increment}>+</button>
       <br />      
-      <Link to={'/cart'}><button className="btn-add" onClick={(e) => funct(e)}>ADD TO CART</button></Link>
     </div>
   );
 };
