@@ -1,8 +1,7 @@
-import { ActionTypes } from "@mui/base";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ItemCount = (props, funct) => {
+const ItemCount = (props, onAdd) => {
   const [quantity, setQuantity] = useState(props.initialQuantity);
 
   const Increment = () => {
@@ -22,6 +21,7 @@ const ItemCount = (props, funct) => {
       <p style={{margin: '5px', marginTop: '35px'}}>{quantity}</p>
       <button className="btn-add" onClick={Increment}>+</button>
       <br />      
+      <Link to={'/cart'}><button className="btn-add" onClick={() => onAdd(quantity)}>ADD TO CART</button></Link>
     </div>
   );
 };

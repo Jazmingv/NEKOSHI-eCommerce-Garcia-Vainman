@@ -1,13 +1,11 @@
 import "../../App.css";
 import ItemCount from "./ItemCount";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const ItemDetail = (props) => {
 
-  const [counter, setCounter] = useState(0);
-
-  const onAdd = (e) => {
-    setCounter(counter + 1);
+  const onAdd = (counter) => {
+    console.log(`${props.title} added to cart. Quantity: ${counter}`);
   };
 
   return (
@@ -30,9 +28,8 @@ const ItemDetail = (props) => {
         <ItemCount
           initialQuantity={props.initialQuantity}
           currentStock={props.currentStock}
-          funct={onAdd()}
+          onAdd={onAdd()}
         />
-        <p>CANTIDAD A COMPRAR: {counter}</p>
       </div>
     </div>
   );

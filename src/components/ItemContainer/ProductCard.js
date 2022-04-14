@@ -7,10 +7,11 @@ import Paper from "@mui/material/Paper";
 
 const ProductCard = (props) => {
 
-  const { cart, addToCart } = useContext(CartContext);
+  //const { cart, addToCart } = useContext(CartContext);
 
   const handleAddToCart = (e) => {
-    addToCart(props.item);
+    //addToCart(props.item);
+    console.log(e);
   };
 
   return (
@@ -25,7 +26,7 @@ const ProductCard = (props) => {
             <b>${props.price}</b>
           </p>
           
-      <Link to={'/cart'}><button className="btn-add" onClick={handleAddToCart()}>ADD TO CART</button></Link>
+      <Link to={`/products/${props.id}`}><button className="btn-add">MORE INFO</button></Link>
         </div>
       </Paper>
     </>

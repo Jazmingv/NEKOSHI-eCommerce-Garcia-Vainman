@@ -27,7 +27,7 @@ function NavBar() {
           </li>
           <li>
             <button className="navbar-btn">
-            <Link to={'/'}>Contacto</Link>
+            <Link to={'/contact'}>Contacto</Link>
             </button>
           </li>
           <li>

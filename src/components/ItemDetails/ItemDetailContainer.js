@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
 
   const filterProductById = (id) => {
     return mockProducts.map((product) => {
-      if (product.id === toString(id)) {
+      if (product.id == id) {
         return setBook(product);
       }
     });
@@ -33,11 +33,12 @@ const ItemDetailContainer = () => {
     <div className="container">
       <div className="box">
         <ItemDetail
+          id={book.id}
           title={book.title}
           imageUrl={book.imageUrl}
           price={book.price}
           sinopsis={book.sinopsis}
-          initialQuantity={book.initialQuantity}
+          initialQuantity={1}
           currentStock={book.currentStock}
         />
       </div>

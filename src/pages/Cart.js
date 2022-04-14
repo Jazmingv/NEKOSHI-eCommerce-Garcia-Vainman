@@ -4,11 +4,11 @@ import { useContext } from "react";
 import CartContext from "../contexts/CartContext";
 
 const Cart = () => {
-  const { cartProducts } = useContext(CartContext);
+  // const { cartProducts } = useContext(CartContext);
 
   return (
     <div>
-      Cart
+      {/* Cart
       {cartProducts.map((product) => {
         return (
           <div className="container">
@@ -20,7 +20,8 @@ const Cart = () => {
             
           </div>
         );
-      })}
+      })} */}
+      CART
     </div>
   );
 };

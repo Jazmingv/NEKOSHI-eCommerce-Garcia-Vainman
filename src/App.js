@@ -22,7 +22,7 @@ import { CartProvider } from "./contexts/CartContext";
 function App() {
   return (
     <div className="App">
-      <CartProvider>
+      {/* <CartProvider> */}
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -35,7 +35,7 @@ function App() {
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </BrowserRouter>
-      </CartProvider>
+      {/* </CartProvider> */}
     </div>
   );
 }
