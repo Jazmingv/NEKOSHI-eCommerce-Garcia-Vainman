@@ -1,6 +1,5 @@
 import "../../App.css";
 import ItemCount from "./ItemCount";
-import { useState } from "react";
 
 const ItemDetail = (props) => {
 
@@ -28,7 +27,7 @@ const ItemDetail = (props) => {
         <ItemCount
           initialQuantity={props.initialQuantity}
           currentStock={props.currentStock}
-          onAdd={onAdd()}
+          onAdd={onAdd}
         />
       </div>
     </div>

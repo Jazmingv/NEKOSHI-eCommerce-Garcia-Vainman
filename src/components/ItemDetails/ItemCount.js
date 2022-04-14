@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-const ItemCount = (props, onAdd) => {
-  const [quantity, setQuantity] = useState(props.initialQuantity);
+const ItemCount = ({initialQuantity, currentStock, onAdd}) => {
+  const [quantity, setQuantity] = useState(initialQuantity);
 
   const Increment = () => {
-    if (quantity >= props.initialQuantity && quantity < props.currentStock) {
+    if (quantity >= initialQuantity && quantity < currentStock) {
       setQuantity(quantity + 1);
     }
   };
   const Decrement = () => {
-    if (quantity <= props.currentStock && quantity > props.initialQuantity) {
+    if (quantity <= currentStock && quantity > initialQuantity) {
       setQuantity(quantity - 1);
     }
   };
@@ -21,7 +21,7 @@ const ItemCount = (props, onAdd) => {
       <p style={{margin: '5px', marginTop: '35px'}}>{quantity}</p>
       <button className="btn-add" onClick={Increment}>+</button>
       <br />      
-      <Link to={'/cart'}><button className="btn-add" onClick={() => onAdd(quantity)}>ADD TO CART</button></Link>
+      <button className="btn-add" onClick={() => onAdd(quantity)}>ADD TO CART</button>
     </div>
   );
 };
