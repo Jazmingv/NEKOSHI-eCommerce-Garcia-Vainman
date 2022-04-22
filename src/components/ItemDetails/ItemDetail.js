@@ -1,10 +1,14 @@
+import { useContext } from "react";
 import "../../App.css";
+import CartContext from "../../contexts/CartContext";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = (props) => {
 
+  const {addToCart} = useContext(CartContext);
+
   const onAdd = (counter) => {
-    console.log(`${props.title} added to cart. Quantity: ${counter}`);
+    addToCart(props, counter);
   };
 
   return (
