@@ -2,12 +2,15 @@ import React from "react";
 import { useContext } from "react";
 
 import CartContext from "../contexts/CartContext";
+import CartPage from "../components/CartPage";
 
 const Cart = () => {
   // const { cartProducts } = useContext(CartContext);
 
   return (
     <div>
+      <h1>Cart</h1>
+      <CartPage />
       {/* Cart
       {cartProducts.map((product) => {
         return (
@@ -21,7 +24,6 @@ const Cart = () => {
           </div>
         );
       })} */}
-      CART
     </div>
   );
 };

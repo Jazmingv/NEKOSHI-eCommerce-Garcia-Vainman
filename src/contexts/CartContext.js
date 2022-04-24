@@ -6,16 +6,16 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (item, quant) => {
-      console.log(item);
+      let cartItemExists = cart.find(cartItem => cartItem.id === item.id);
       const newItem = {
         item,
         quant
       };
-      setCart([...cart, newItem]);
+      !cartItemExists && setCart([...cart, newItem]);
   };
 
   const removeFromCart = (itemId) => {
-    const newCart = cart.filter(item => item.id !== itemId);
+    const newCart = cart.filter(item => item.item.id !== itemId);
     setCart(newCart);
   };
 
@@ -27,6 +27,7 @@ const CartProvider = ({ children }) => {
 
   const data = {
     cart,
+    setCart,
     addToCart,
     removeFromCart,
     clearCart
