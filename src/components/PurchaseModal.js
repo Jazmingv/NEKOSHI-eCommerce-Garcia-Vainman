@@ -24,9 +24,9 @@ export default function PurchaseModal() {
       buyer: form,
       items: cart.map((product) => {
           return {
-              title: product.title,
-              price: product.price,
-              quantity: product.quantity,
+              title: product.item.title,
+              price: product.item.price,
+              quantity: product.quant,
       }
       }),
       total: total
@@ -45,11 +45,11 @@ export default function PurchaseModal() {
     }
 
     const pushOrder = async () => {
-      setOrder({...order, 
+      const newOrder = setOrder({...order, 
         buyer: form
       });
       const firebaseOrder = collection(dBase, 'orders');
-      const dBaseOrder = await addDoc(firebaseOrder, order);
+      const dBaseOrder = await addDoc(firebaseOrder, newOrder);
       console.log("id de la orden: ", dBaseOrder.id);
       setCart([]);
     }
@@ -77,7 +77,7 @@ export default function PurchaseModal() {
           {"Finish your order"}
         </DialogTitle>
         <DialogContent>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" id="name" onChange={handleChange} value={form.name}/><br />
                 <label htmlFor="email">Email</label>
@@ -88,7 +88,7 @@ export default function PurchaseModal() {
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setOpen(false)}>Cancel</Button>
-          <Button onClick={() => setOpen(false)} autoFocus>
+          <Button onClick={handleSubmit} autoFocus>
             Finish
           </Button>
         </DialogActions>
