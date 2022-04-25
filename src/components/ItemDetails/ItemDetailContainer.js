@@ -1,45 +1,42 @@
 import ItemDetail from "./ItemDetail";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import mockProducts from "../mockProducts";
+
+import dBase from "../../Firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-  const getBook = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(mockProducts);
-      }, 2000);
-    });
-  };
 
   const { id } = useParams();
-  const [book, setBook] = useState({});
+  const [product, setproduct] = useState({});
+  const navigate = useNavigate();
+  
+  const getProduct = async () => {
+    const docRef = doc(dBase, "products", id);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      const product = docSnap.data();
+      product.id = docSnap.id;
+      setproduct(product);
+    } else {
+      navigate("/error");
+    }
+  }
 
   useEffect(() => {
-    getBook().then((book) => {
-      filterProductById(id);
-    });
+    getProduct();
   }, [id]);
-
-  const filterProductById = (id) => {
-    return mockProducts.map((product) => {
-      if (product.id == id) {
-        return setBook(product);
-      }
-    });
-  };
 
   return (
     <div className="container">
       <div className="box">
         <ItemDetail
-          id={book.id}
-          title={book.title}
-          imageUrl={book.imageUrl}
-          price={book.price}
-          sinopsis={book.sinopsis}
+          id={product.id}
+          title={product.title}
+          imageUrl={product.imageUrl}
+          price={product.price}
           initialQuantity={1}
-          currentStock={book.currentStock}
+          currentStock={product.currentStock}
         />
       </div>
     </div>

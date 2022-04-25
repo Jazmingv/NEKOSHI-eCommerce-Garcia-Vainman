@@ -26,11 +26,9 @@ const ItemDetail = (props) => {
       </div>
       <div className="card-right">
         <h2 className="item-title">{props.title}</h2>
-        <h5>{props.author}</h5>
         <p className="item-price">
-          <b>${props.price}</b>
+        <h5><b>${props.price}</b></h5>
         </p>
-        <p className="item-desc">{props.sinopsis}</p>
         <br></br>
     {
       !onCart ?

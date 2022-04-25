@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 import ClearIcon from "@mui/icons-material/Clear";
 import Table from "@mui/material/Table";
@@ -9,11 +10,13 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
+import PurchaseModal from "./PurchaseModal";
+
 import CartContext from "../contexts/CartContext";
 import { useContext } from "react";
 
 const CartTable = () => {
-  const { cart, removeFromCart } = useContext(CartContext);
+  const { cart, removeFromCart, total } = useContext(CartContext);
 
   return (
     <>
@@ -51,10 +54,8 @@ const CartTable = () => {
         </Table>
       </TableContainer>
       <div>
-        <h3>Total: ${cart.reduce((acc, product) => {
-            console.log(acc);
-            return parseFloat(acc + product.item.price * product.quant);
-            }, 0)}</h3>
+        <h3>Total: ${total}</h3>
+        {<PurchaseModal/>}
       </div>
     </>
   );

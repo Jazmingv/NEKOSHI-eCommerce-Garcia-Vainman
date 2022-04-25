@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
-import mockProducts from "../mockProducts";
+
+import dBase from "../../Firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 const ListProducts = () => {
   const [products, setProducts] = useState([]);
   const [loader, setLoader] = useState(true);
 
-  // const {category} = useParams();
-  // Con la línea de arriba me permite poner el useEffect así = useEffect(() => {..., [category]);, así el loader se usa cada vez que se cambia de categoría
-
-  const getProducts = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(mockProducts);
-      }, 2000);
+  const getProducts = async () => {
+    const itemCollection = collection(dBase, "products");
+    const itemDocs = await getDocs(itemCollection);
+    const mockProducts = itemDocs.docs.map((doc) => {
+      let product = doc.data();
+      product.id = doc.id;
+      return product;
     });
+    return mockProducts;
   };
 
   useEffect(() => {
