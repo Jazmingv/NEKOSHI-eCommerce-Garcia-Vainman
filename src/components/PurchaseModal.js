@@ -3,7 +3,6 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
 import CartContext from "../contexts/CartContext";
@@ -45,9 +44,9 @@ export default function PurchaseModal() {
     }
 
     const pushOrder = async () => {
-      const newOrder = setOrder({...order, 
+      const newOrder = {...order, 
         buyer: form
-      });
+      };
       const firebaseOrder = collection(dBase, 'orders');
       const dBaseOrder = await addDoc(firebaseOrder, newOrder);
       console.log("id de la orden: ", dBaseOrder.id);
