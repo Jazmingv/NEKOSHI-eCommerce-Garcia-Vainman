@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 
 import ClearIcon from "@mui/icons-material/Clear";
 import Table from "@mui/material/Table";

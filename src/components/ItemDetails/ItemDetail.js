@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import "../../App.css";
 import CartContext from "../../contexts/CartContext";
 import ItemCount from "./ItemCount";
@@ -26,9 +26,7 @@ const ItemDetail = (props) => {
       </div>
       <div className="card-right">
         <h2 className="item-title">{props.title}</h2>
-        <p className="item-price">
-        <h5><b>${props.price}</b></h5>
-        </p>
+        <h5 className="item-price"><b>${props.price}</b></h5>
         <br></br>
     {
       !onCart ?

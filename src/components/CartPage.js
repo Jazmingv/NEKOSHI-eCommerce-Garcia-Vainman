@@ -7,6 +7,7 @@ import CartContext from "../contexts/CartContext";
 
 const CartPage = () => {
     const { cart, removeFromCart, total } = useContext(CartContext);
+    console.log(cart);
 
   return (
     <>

@@ -7,7 +7,7 @@ const CartProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
 
   const addToCart = (item, quant) => {
-      let cartItemExists = cart.find(cartItem => cartItem.id === item.id);
+      let cartItemExists = cart.find(cartItem => cartItem.item.id === item.id);
       const newItem = {
         item,
         quant

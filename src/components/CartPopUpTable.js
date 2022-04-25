@@ -1,7 +1,5 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import Badge from "@mui/material/Badge";
-import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 
 import { useContext } from "react";

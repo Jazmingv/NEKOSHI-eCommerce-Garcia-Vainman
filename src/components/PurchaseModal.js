@@ -77,16 +77,14 @@ export default function PurchaseModal() {
           {"Finish your order"}
         </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            <form onSubmit={handleSubmit()}>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name</label>
-                <input type="text" name="name" id="name" onChange={handleChange()} value={form.name}/><br />
+                <input type="text" name="name" id="name" onChange={handleChange} value={form.name}/><br />
                 <label htmlFor="email">Email</label>
-                <input type="email" name="email" id="email" onChange={handleChange()} value={form.email}/><br />
+                <input type="email" name="email" id="email" onChange={handleChange} value={form.email}/><br />
                 <label htmlFor="phone">Phone</label>
-                <input type="number" name="phone" id="phone" onChange={handleChange()} value={form.phone}/>
+                <input type="number" name="phone" id="phone" onChange={handleChange} value={form.phone}/>
             </form>
-          </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setOpen(false)}>Cancel</Button>
