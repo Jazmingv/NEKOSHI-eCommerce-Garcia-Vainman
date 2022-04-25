@@ -2,7 +2,12 @@ import React from "react";
 
 import CartTable from "./CartTable";
 
+import { useContext } from "react";
+import CartContext from "../contexts/CartContext";
+
 const CartPage = () => {
+    const { cart, removeFromCart, total } = useContext(CartContext);
+
   return (
     <>
       {cart.length === 0 ? (
