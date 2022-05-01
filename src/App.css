@@ -1,5 +1,4 @@
-@import url("https://use.typekit.net/jdd8yuv.css");
-@import url("https://use.typekit.net/jdd8yuv.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 /* font-family: nimbus-sans,sans-serif;
 font-weight: 700;
@@ -9,52 +8,17 @@ font-family: nimbus-sans,sans-serif;
 font-weight: 400;
 font-style: normal;*/
 
-header.main-header {
-  display: flex;
-  padding: 10px 40px;
-  background-color: #ffe394;
-  border-bottom: 1px solid #1e1f1c;
-  justify-content: space-between;
-  align-items: center;
+:root {
+  --primary: #3500D3;
+  --secondary: #282828;
+  --dark: #202020;
+  --light: #FFFFFA;
 }
 
-ul.navbar-links {
-  list-style: none;
-  display: flex;
-}
-
-ul.navbar-links li {
-  margin-right: 15px;
-  font-family: cubano-sharp, sans-serif;
-  font-weight: 400;
-}
-
-ul.navbar-links li button.navbar-btn,
-a {
-  color: #1e1f1c;
-  text-decoration: none;
-  border-style: none;
-  background: none;
-  font-family: 'cubano-sharp', sans-serif;
-  font-size: 25px;
-  letter-spacing: 1px;
-}
-
-ul.navbar-links li button.navbar-btn:hover,
-a:hover {
-  background: linear-gradient(
-    to bottom,
-    transparent 50%,
-    #D3B96D 50%
-  );
-}
-
-.container-logo {
-  width: 80px;
-}
-
-.container-logo img {
-  width: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .MainPage {
