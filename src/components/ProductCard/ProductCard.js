@@ -1,22 +1,23 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import ItemCount from "../ItemDetails/ItemCount";
-import CartContext from "../../contexts/CartContext";
-import Paper from "@mui/material/Paper";
+import "../../App.css";
+import "./ProductCard.css";
 
 const ProductCard = (props) => {
-
-  //const { cart, addToCart } = useContext(CartContext);
-
-  const handleAddToCart = (e) => {
-    //addToCart(props.item);
-    console.log(e);
-  };
-
   return (
     <>
-      <Paper elevation={3} className="card">
+      <div className="product-card">
+        <Link to={`/products/${props.id}`}>
+          <div className="card-img">
+            <img src={props.imageUrl} alt={props.title} />
+          </div>
+          <div className="card-header">
+            <h2>{props.title}</h2>
+            <h3>${props.price}</h3>
+          </div>
+        </Link>
+      </div>
+      {/* <Paper elevation={3} className="card">
         <img src={props.imageUrl} alt={props.title} />
         <div className="container">
           <h3>{props.title}</h3>
@@ -28,7 +29,7 @@ const ProductCard = (props) => {
           
       <Link to={`/products/${props.id}`}><button className="btn-add">MORE INFO</button></Link>
         </div>
-      </Paper>
+      </Paper> */}
     </>
   );
 };

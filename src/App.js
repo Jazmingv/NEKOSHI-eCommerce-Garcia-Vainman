@@ -6,14 +6,15 @@ import "./App.css";
 
 //components
 import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
 import ItemDetailContainer from "./components/ItemDetails/ItemDetailContainer";
 
 //pages
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Products from "./pages/Products";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
-import ErrorPage from "./pages/ErrorPage";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import Cart from "./pages/Cart";
 
 //contexts
@@ -24,17 +25,20 @@ function App() {
     <div className="App">
       <CartProvider>
         <BrowserRouter>
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/aboutus" element={<AboutUs />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/products/:id" element={<ItemDetailContainer />} />
-            <Route path="/error" element={<ErrorPage />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
+          <div className="content-wrap">
+            <NavBar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/aboutus" element={<AboutUs />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/products/:id" element={<ItemDetailContainer />} />
+              <Route path="/error" element={<ErrorPage />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
+            <Footer />
+          </div>
         </BrowserRouter>
       </CartProvider>
     </div>

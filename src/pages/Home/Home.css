@@ -1,0 +1,43 @@
+.focus {
+  width: calc(100vw - 5.5rem);
+  height: 50vh;
+  margin: 7rem 2rem 2rem 2rem;
+  border-radius: 30px;
+  box-shadow: 10px -10px var(--dark), 10px -10px 0px 2px var(--black);
+
+  background-image: url("../../assets/concrete-textured-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-flow: row;
+}
+
+.focus-text {
+    padding: 32px;
+    margin: auto;
+  flex: 2;
+}
+
+.focus-text h2 {
+    font-size: 3rem;
+  font-family: mostra-nuova, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+    margin: auto;
+  color: var(--dark);
+}
+
+.focus-text p {
+    margin: 16px 0px;
+    font-size: 1.5rem;
+    color: var(--dark);
+}
+
+.focus img {
+  width: auto;
+  max-height: 100%;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}

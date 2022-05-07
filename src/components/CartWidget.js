@@ -5,7 +5,8 @@ import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+
 import { Link } from "react-router-dom";
 
 import { useContext } from "react";
@@ -13,15 +14,18 @@ import CartContext from "../contexts/CartContext";
 
 import CartPopUpTable from "./CartPopUpTable";
 
-function CartWidget() {
-  const StyledBadge = styled(Badge)(({ theme }) => ({
-    "& .MuiBadge-badge": {
-      right: -3,
-      top: 13,
-      border: `2px solid ${theme.palette.background.paper}`,
-      padding: "0 4px",
-    },
-  }));
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  "& .MuiBadge-badge": {
+    right: 0,
+    top: 6,
+    border: "none",
+    backgroundColor: "#AFEB30",
+    color: "#111111",
+    padding: "0 4px",
+  },
+}));
+
+const CartWidget = () => {
 
   const { cart } = useContext(CartContext);
 
@@ -32,7 +36,7 @@ function CartWidget() {
           <div>
             <IconButton aria-label="cart" variant="text" {...bindTrigger(popupState)}>
                 <StyledBadge badgeContent={cart.length} color="primary">
-                  <ShoppingCartIcon />
+                  <ShoppingBagOutlinedIcon sx={{ fontSize: 28, color: '#FFF' }} />
                 </StyledBadge>
               </IconButton>
             <Popover

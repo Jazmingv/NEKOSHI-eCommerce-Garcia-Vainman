@@ -3,21 +3,17 @@ import "./NavBar.css";
 
 import CartWidget from "../CartWidget";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-function NavBar() {
+const NavBar = () => {
   const [activeMenu, setactiveMenu] = useState(false);
 
   const handleToggle = () => {
     setactiveMenu(!activeMenu);
   };
 
-  useEffect(() => {
-    // console.log(activeMenu);
-  }, [activeMenu]);
-
   return (
-    <nav>
+    <header>
       <div className="nav-wrapper">
         <div className="container-logo">
           <Link to="/">
@@ -56,7 +52,7 @@ function NavBar() {
           </button>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }
 

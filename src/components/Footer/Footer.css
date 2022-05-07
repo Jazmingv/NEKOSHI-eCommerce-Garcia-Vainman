@@ -1,31 +1,19 @@
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+footer {
+  margin-top: auto;
   padding: 16px 32px;
   z-index: 99;
+  color: var(--light);
   background-color: var(--secondary);
 }
 
-.nav-wrapper {
-  max-width: 1500px;
+.footer-wrapper {
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-h1 {
-  font-family: mostra-nuova, sans-serif;
-  font-weight: 900;
-  font-size: 28px;
-  color: var(--primary);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
 ul.navbar-links {
   display: none;
   list-style: none;
@@ -37,7 +25,7 @@ ul.navbar-links {
   list-style: none;
 }
 
-button.navbar-btn {
+button {
   background: none;
   border: none;
   padding: 8px;
@@ -46,7 +34,7 @@ button.navbar-btn {
   letter-spacing: 1px;
 }
 
-button.navbar-btn a {
+footer a {
   color: var(--light);
   text-decoration: none;
 }
