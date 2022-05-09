@@ -23,7 +23,7 @@ const ItemListContainer = () => {
       {loader ? (
         <h1>Loading...</h1>
       ) : (
-        <div className="products-container">
+        <div className="product-card-container">
           {products.map((product) => (
             <ProductCard key={product.id} {...product} />
           ))}

@@ -1,8 +1,7 @@
 import "../../App.css";
 import "./NavBar.css";
 
-import CartWidget from "./Widgets/CartWidget.js";
-import FavoritesWidget from "./Widgets/FavoritesWidget";
+import CartWidget from "./CartWidget/CartWidget.js";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 
 import { Link } from "react-router-dom";
@@ -20,7 +19,6 @@ const NavBar = () => {
         </div>
         <div className="menu-icons">
           <CartWidget />
-          <FavoritesWidget />
         </div>
       </div>
     </header>
