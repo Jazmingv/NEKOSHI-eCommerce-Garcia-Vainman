@@ -27,16 +27,18 @@ function App() {
         <BrowserRouter>
           <div className="content-wrap">
             <NavBar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/aboutus" element={<AboutUs />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/products/:id" element={<ItemDetailContainer />} />
-              <Route path="/error" element={<ErrorPage />} />
-              <Route path="*" element={<ErrorPage />} />
-            </Routes>
+            <div className="main-wrap">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/aboutus" element={<AboutUs />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/products/:id" element={<ItemDetailContainer />} />
+                <Route path="/error" element={<ErrorPage />} />
+                <Route path="*" element={<ErrorPage />} />
+              </Routes>
+            </div>
             <Footer />
           </div>
         </BrowserRouter>

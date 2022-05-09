@@ -10,9 +10,9 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { Link } from "react-router-dom";
 
 import { useContext } from "react";
-import CartContext from "../contexts/CartContext";
+import CartContext from "../../../contexts/CartContext";
 
-import CartPopUpTable from "./CartPopUpTable";
+import CartPopUpTable from "../../CartPopUpTable";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {

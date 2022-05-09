@@ -27,8 +27,6 @@ const CartProvider = ({ children }) => {
     setCart([]);
   };
 
-  console.log(cart);
-
   const data = {
     cart,
     setCart,

@@ -5,7 +5,6 @@ import "./ProductCard.css";
 
 const ProductCard = (props) => {
   return (
-    <>
       <div className="product-card">
         <Link to={`/products/${props.id}`}>
           <div className="card-img">
@@ -17,20 +16,6 @@ const ProductCard = (props) => {
           </div>
         </Link>
       </div>
-      {/* <Paper elevation={3} className="card">
-        <img src={props.imageUrl} alt={props.title} />
-        <div className="container">
-          <h3>{props.title}</h3>
-          <h5>{props.author}</h5>
-          <p>{props.description}</p>
-          <p>
-            <b>${props.price}</b>
-          </p>
-          
-      <Link to={`/products/${props.id}`}><button className="btn-add">MORE INFO</button></Link>
-        </div>
-      </Paper> */}
-    </>
   );
 };
 
