@@ -6,11 +6,10 @@ import dBase from "../../Firebase";
 import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-
   const { id } = useParams();
   const [product, setproduct] = useState({});
   const navigate = useNavigate();
-  
+
   const getProduct = async () => {
     const docRef = doc(dBase, "products", id);
     const docSnap = await getDoc(docRef);
@@ -21,24 +20,22 @@ const ItemDetailContainer = () => {
     } else {
       navigate("/error");
     }
-  }
+  };
 
   useEffect(() => {
     getProduct();
   }, [id]);
 
   return (
-    <div className="container">
-      <div className="box">
-        <ItemDetail
-          id={product.id}
-          title={product.title}
-          imageUrl={product.imageUrl}
-          price={product.price}
-          initialQuantity={1}
-          currentStock={product.currentStock}
-        />
-      </div>
+    <div className="box">
+      <ItemDetail
+        id={product.id}
+        title={product.title}
+        imageUrl={product.imageUrl}
+        price={product.price}
+        initialQuantity={1}
+        currentStock={product.currentStock}
+      />
     </div>
   );
 };

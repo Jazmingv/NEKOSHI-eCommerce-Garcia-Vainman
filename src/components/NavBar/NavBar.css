@@ -1,10 +1,10 @@
 header {
   position: fixed;
-  margin-bottom: 100px !important;
   top: 0;
   left: 0;
   right: 0;
   padding: 16px 32px;
+  z-index: 9;
   background-color: var(--secondary);
 }
 

@@ -16,7 +16,7 @@ const ItemDetail = (props) => {
   };
 
   return (
-    <div className="container">
+    <div className="detail-container">
       <div className="card-image">
         <img
           src={props.imageUrl}

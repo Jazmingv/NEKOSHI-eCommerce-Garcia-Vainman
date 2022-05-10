@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ItemListContainer from "../../components/ItemListContainer/ItemListContainer";
 
 import "../../App.css";
 import "./Home.css";
@@ -17,7 +16,6 @@ const Home = () => {
           <img src={require("../../assets/banner.jpg")} alt="" />
         </div>
       </Link>
-      <ItemListContainer />
     </div>
   );
 };
